@@ -5,7 +5,17 @@ import vegasHero from "@/assets/vegas-hero.jpg";
 
 const Index = () => {
   const scrollToForm = () => {
-    document.getElementById("referral-form")?.scrollIntoView({ behavior: "smooth" });
+    const formElement = document.getElementById("referral-form");
+    if (formElement) {
+      const headerOffset = 100;
+      const elementPosition = formElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
@@ -127,6 +137,23 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-4">
           <OfficialRules />
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+              Ready to Win $500 Cash?
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Enter now for your chance to win. It only takes a minute!
+            </p>
+            <Button variant="hero" size="xl" onClick={scrollToForm} className="mt-6">
+              Submit Your Entry Now
+            </Button>
+          </div>
         </div>
       </section>
 
