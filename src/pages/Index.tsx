@@ -43,14 +43,19 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-block text-6xl mb-4 animate-pulse">
-              💰
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="flex justify-center gap-4 text-6xl mb-4">
+              <span className="animate-pulse">💰</span>
+              <span className="animate-pulse delay-150">💵</span>
+              <span className="animate-pulse delay-300">💸</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-black text-foreground leading-tight">
-              Refer & Win Cash!
-            </h1>
+            <div className="relative inline-block">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 blur-2xl animate-pulse"></div>
+              <h1 className="relative text-5xl md:text-7xl font-black text-foreground leading-tight">
+                Refer & Win Cash!
+              </h1>
+            </div>
             
             <p className="text-xl md:text-2xl text-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Know someone looking to buy or sell real estate in Las Vegas?
@@ -66,13 +71,24 @@ const Index = () => {
               </Button>
             </div>
 
-            <div className="bg-card/90 backdrop-blur-sm border-2 border-primary rounded-lg p-6 max-w-2xl mx-auto mt-8 shadow-[var(--shadow-strong)]">
-              <p className="text-lg font-bold text-primary mb-2">
-                🎉 $500 CASH PRIZE
-              </p>
-              <p className="text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">No Purchase Necessary.</span> Open to Nevada residents 18+. See official rules below.
-              </p>
+            <div className="relative bg-card/90 backdrop-blur-sm border-2 border-primary rounded-lg p-8 max-w-2xl mx-auto mt-8 shadow-[var(--shadow-strong)]">
+              <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground rounded-full p-3 shadow-lg animate-bounce">
+                💵
+              </div>
+              <div className="absolute -top-3 -left-3 bg-primary text-primary-foreground rounded-full p-3 shadow-lg animate-bounce delay-150">
+                💰
+              </div>
+              <div className="space-y-3">
+                <p className="text-3xl font-black text-primary">
+                  🎉 $500 CASH PRIZE 🎉
+                </p>
+                <p className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Real Money • No Strings Attached • Direct to Your Pocket
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">No Purchase Necessary.</span> Open to Nevada residents 18+. See official rules below.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -103,11 +119,16 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="text-center p-6 bg-card rounded-lg border border-border shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-strong)] transition-all duration-300">
+              <div className="relative text-center p-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg border-2 border-primary shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-strong)] transition-all duration-300">
+                <div className="absolute top-2 right-2 text-2xl animate-bounce">💸</div>
                 <div className="text-5xl mb-4">3️⃣</div>
                 <h3 className="text-xl font-bold mb-3 text-foreground">Win Cash!</h3>
+                <div className="bg-primary/20 border border-primary rounded-lg p-4 my-3">
+                  <p className="text-3xl font-black text-primary">$500</p>
+                  <p className="text-xs text-muted-foreground">in cash</p>
+                </div>
                 <p className="text-muted-foreground">
-                  One lucky winner will receive $500 cash. Winner will be notified by phone or email
+                  Winner will be notified by phone or email
                 </p>
               </div>
             </div>
@@ -141,17 +162,37 @@ const Index = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 text-6xl animate-float">💵</div>
+          <div className="absolute top-40 right-20 text-5xl animate-float delay-300">💰</div>
+          <div className="absolute bottom-20 left-1/4 text-7xl animate-float delay-150">💸</div>
+          <div className="absolute top-1/3 right-1/3 text-6xl animate-float delay-500">💵</div>
+          <div className="absolute bottom-40 right-10 text-5xl animate-float">💰</div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <div className="inline-block relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary via-accent to-primary blur-xl opacity-30 animate-pulse"></div>
+              <div className="relative bg-card border-4 border-primary rounded-2xl p-8 shadow-[var(--shadow-strong)]">
+                <div className="flex justify-center gap-2 text-4xl mb-4">
+                  <span>💰</span>
+                  <span className="text-5xl font-black text-primary">$500</span>
+                  <span>💰</span>
+                </div>
+                <p className="text-lg font-bold text-foreground">CASH PRIZE WAITING!</p>
+              </div>
+            </div>
+            
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Ready to Win $500 Cash?
+              Don't Miss Your Chance!
             </h2>
             <p className="text-xl text-muted-foreground">
-              Enter now for your chance to win. It only takes a minute!
+              One simple form stands between you and $500 cash. Enter now!
             </p>
             <Button variant="hero" size="xl" onClick={scrollToForm} className="mt-6">
-              Submit Your Entry Now
+              💸 Claim Your Entry Now
             </Button>
           </div>
         </div>
